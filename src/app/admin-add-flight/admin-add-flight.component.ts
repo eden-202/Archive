@@ -118,12 +118,12 @@ export class AdminAddFlightComponent implements OnInit, OnDestroy {
         airportName: destination?.airport_name,
         airportWebsite: destination?.airport_url,
       });
-      alert("Flight added successfully!");
       this.router.navigate(["/admin-manage-flights"]);
+      alert("Flight added successfully!");
     } else {
       // Mark all fields as touched to show validation messages
-      this.flightForm.markAllAsTouched();
       alert("Please fill in all required fields before submitting.");
+      this.flightForm.markAllAsTouched();
     }
   }
 }
