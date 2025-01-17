@@ -1,0 +1,60 @@
+<div>
+    <form [formGroup]="destinationForm" (ngSubmit)="addDestination()" novalidate>
+        <h2>New Destination</h2>
+
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label for="destinationName">Destination Name</mat-label>
+                <input required matInput type="text" class="form-control" id="destinationName"
+                    formControlName="destination_name">
+            </mat-form-field>
+            <small
+                *ngIf="destinationForm.get('destination_name')?.hasError('required') && destinationForm.get('destination_name')?.touched">
+                Destination Name is required
+            </small>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label for="airportName">Airport name</mat-label>
+                <input required matInput type="text" class="form-control" id="airportName"
+                    formControlName="airport_name">
+            </mat-form-field>
+            <small
+                *ngIf="destinationForm.get('airport_name')?.hasError('required') && destinationForm.get('airport_name')?.touched">
+                Airport Name is required
+            </small>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label for="airportUrl">Airport url</mat-label>
+                <input required matInput type="url" class="form-control" id="airportUrl" formControlName="airport_url">
+            </mat-form-field>
+            <small
+                *ngIf="destinationForm.get('airport_url')?.hasError('required') && destinationForm.get('airport_url')?.touched">
+                Airport URL is required
+            </small>
+            <small
+                *ngIf="destinationForm.get('airport_url')?.hasError('pattern') && destinationForm.get('airport_url')?.touched">
+                Please enter a valid URL
+            </small>
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label for="imageUrl">Image url</mat-label>
+                <input required matInput type="url" class="form-control" id="imageUrl" formControlName="image_url">
+            </mat-form-field>
+            <small
+                *ngIf="destinationForm.get('image_url')?.hasError('required') && destinationForm.get('image_url')?.touched">
+                Image URL is required
+            </small>
+            <small
+                *ngIf="destinationForm.get('image_url')?.hasError('pattern') && destinationForm.get('image_url')?.touched">
+                Please enter a valid URL
+            </small>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>

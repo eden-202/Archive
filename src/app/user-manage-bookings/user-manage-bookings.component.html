@@ -1,0 +1,61 @@
+<div class="table-container">
+    <h1>Upcoming bookings</h1>
+    <table mat-table [dataSource]="upcoming_bookings" class="design-table">
+
+        <ng-container matColumnDef="destination_image">
+            <th mat-header-cell *matHeaderCellDef> Destination Image </th>
+            <td mat-cell *matCellDef="let element">
+                <img width="100" [src]="element.flight.image_url" alt="Destination Image" />
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="flight_details">
+            <th mat-header-cell *matHeaderCellDef> Flight Details </th>
+            <td mat-cell *matCellDef="let element">
+                <p>Origin: {{ element.flight.origin }} {{ element.flight.boarding_date }} {{
+                    element.flight.boarding_time }}</p>
+                <p>Destination: {{ element.flight.destination }} {{ element.flight.arrival_date }} {{
+                    element.flight.arrival_time }}</p>
+                <p>Passengers: {{element.passengers.length}}</p>
+                <button mat-icon-button aria-label="View" class="btn" style="margin-block: 1rem;"
+                    [routerLink]="['/user-booking-details', element.booking_id]">
+                    View
+                </button>
+            </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <h1>Previous bookings</h1>
+    <table mat-table [dataSource]="past_bookings" class="design-table">
+
+        <ng-container matColumnDef="destination_image">
+            <th mat-header-cell *matHeaderCellDef> Destination Image </th>
+            <td mat-cell *matCellDef="let element">
+                <img width="100" [src]="element.flight.image_url" alt="Destination Image" />
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="flight_details">
+            <th mat-header-cell *matHeaderCellDef> Flight Details </th>
+            <td mat-cell *matCellDef="let element">
+                <p>Origin: {{ element.flight.origin }} {{ element.flight.boarding_date }} {{
+                    element.flight.boarding_time }}</p>
+                <p>Destination: {{ element.flight.destination }} {{ element.flight.arrival_date }} {{
+                    element.flight.arrival_time }}</p>
+                <p>Passengers: {{element.passengers.length}}</p>
+                <button mat-icon-button aria-label="View" class="icon"
+                    [routerLink]="['/user-booking-details', element.booking_id]">
+                    View
+                </button>
+            </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <br />
+</div>

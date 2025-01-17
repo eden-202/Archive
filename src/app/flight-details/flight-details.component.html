@@ -1,0 +1,9 @@
+<div *ngIf="flight" class="destination-details">
+    <h1>Origin: {{ flight.origin }}</h1>
+    <h1>Destination: {{ flight.destination }}</h1>
+    <img [src]="flight.image_url" alt="Destination Image" />
+    <p>Airport: {{ flight.airportName }}</p>
+    <p>Boarding Date: {{ flight.boarding_date }}</p>
+    <p>Boarding Time: {{ flight.boarding_time }}</p>
+    <a [href]="flight.airportWebsite">Visit airport website</a>
+</div>

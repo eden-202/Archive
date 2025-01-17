@@ -1,0 +1,25 @@
+<div *ngIf="booking">
+    <h2>Booking Details</h2>
+    <mat-card class="booking-card">
+        <mat-card-header>
+            <mat-card-title>Booking ID: {{ booking.booking_id }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                Origin: {{ booking.flight.origin }}
+                {{ booking.flight.boarding_date }}
+                {{ booking.flight.boarding_time }}
+            </p>
+            <p>
+                Destination: {{ booking.flight.destination }}
+                {{ booking.flight.arrival_date }} {{ booking.flight.arrival_time }}
+            </p>
+            <p>Passengers: {{ booking.passengers.length }}</p>
+
+            <div *ngFor="let passenger of booking.passengers">
+                <p>Passenger Full name: {{ passenger.full_name }}</p>
+                <p>Passenger Passport number: {{ passenger.passport_number }}</p>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

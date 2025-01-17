@@ -1,0 +1,19 @@
+
+.navigation {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    background-color: #3a3b46;
+    color: #fff;
+}
+.navigation-menu {
+    background-color: transparent;
+    border:none;
+    color:white;
+    cursor: pointer;
+}
+.expandable-menu {
+    font-size: 32px;
+    cursor: pointer;
+}

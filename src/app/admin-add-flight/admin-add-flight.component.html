@@ -1,0 +1,99 @@
+<div>
+    <form [formGroup]="flightForm" (ngSubmit)="addFlight()" novalidate>
+        <h2>New Flight</h2>
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label for="origin">Origin</mat-label>
+                <mat-select required matInput type="text" class="form-control" id="origin" formControlName="origin">
+                    <mat-option *ngFor="let origin of all_destinations" [value]="origin.destination_name">
+                        {{origin.destination_name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <small *ngIf="flightForm.get('origin')?.hasError('required') && flightForm.get('origin')?.touched">
+                Origin is required
+            </small>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label for="destination">Destination</mat-label>
+                <mat-select required matInput type="url" class="form-control" id="destination"
+                    formControlName="destination">
+                    <mat-option *ngFor="let destination of all_destinations" [value]="destination.destination_name">
+                        {{destination.destination_name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <small
+                *ngIf="flightForm.get('destination')?.hasError('required') && flightForm.get('destination')?.touched">
+                Destination is required
+            </small>
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label for="boardingDate">Boarding date</mat-label>
+                <input required matInput type="date" class="form-control" id="boardingDate"
+                    formControlName="boarding_date">
+            </mat-form-field>
+            <small
+                *ngIf="flightForm.get('boarding_date')?.hasError('pastDate') && flightForm.get('boarding_date')?.touched">
+                Boarding date must be in the future
+            </small>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label for="boardingTime">Boarding time</mat-label>
+                <input required matInput type="time" class="form-control" id="boardingTime"
+                    formControlName="boarding_time">
+            </mat-form-field>
+            <small
+                *ngIf="flightForm.get('boarding_time')?.hasError('required') && flightForm.get('boarding_time')?.touched">
+                Boarding time is required
+            </small>
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label for="arrivalDate">Arrival date</mat-label>
+                <input required matInput type="date" class="form-control" id="arrivalDate"
+                    formControlName="arrival_date">
+            </mat-form-field>
+            <small
+                *ngIf="flightForm.get('arrival_date')?.hasError('pastDate') && flightForm.get('arrival_date')?.touched">
+                Arrival date must be in the future
+            </small>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label for="arrivalTime">Arrival time</mat-label>
+                <input required matInput type="time" class="form-control" id="arrivalTime"
+                    formControlName="arrival_time">
+            </mat-form-field>
+            <small
+                *ngIf="flightForm.get('arrival_time')?.hasError('timeInvalid') && flightForm.get('arrival_time')?.touched">
+                Arrival time must be after the boarding time
+            </small>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field>
+                <mat-label for="numberOfPassengers">No. of seats</mat-label>
+                <input required matInput type="number" class="form-control" id="numberOfPassengers"
+                    formControlName="numberOfPassengers">
+            </mat-form-field>
+            <small
+                *ngIf="flightForm.get('numberOfPassengers')?.hasError('min') && flightForm.get('numberOfPassengers')?.touched">
+                Number of passengers must be greater than 0
+            </small>
+            <small 
+                *ngIf="flightForm.get('numberOfPassengers')?.hasError('max') && flightForm.get('numberOfPassengers')?.touched">
+                Number of passengers cannot exceed 200
+            </small>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>

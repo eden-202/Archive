@@ -1,0 +1,31 @@
+<nav class="navigation">
+    <button mat-icon-button class="navigation-menu" [matMenuTriggerFor]="menu">
+      <mat-icon class="navigation-menu">menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="menu_admin">
+        <span>Admin</span>
+        <mat-menu #menu_admin="matMenu">
+          <button mat-menu-item [routerLink]="['/admin-manage-flights']">
+            <span>Manage Flights</span>
+          </button>
+          <button mat-menu-item [routerLink]="['/admin-manage-destinations']">
+            <span>Manage Destinations</span>
+          </button>
+        </mat-menu>
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="menu_user">
+        <span>User</span>
+        <mat-menu #menu_user="matMenu">
+          <button mat-menu-item [routerLink]="['/user-book-flight']">
+            <span>Book a flight</span>
+          </button>
+          <button mat-menu-item [routerLink]="['/user-manage-bookings']">
+            <span>Manage Bookings</span>
+          </button>
+        </mat-menu>
+      </button>
+    </mat-menu>
+    <h1 style="cursor: pointer;" [routerLink]="['/']">OnoAir</h1>
+  </nav>
+  

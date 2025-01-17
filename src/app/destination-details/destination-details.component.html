@@ -1,0 +1,6 @@
+<div *ngIf="destination" class="destination-details">
+    <h1>{{ destination.destination_name }}</h1>
+    <img [src]="destination.image_url" alt="Destination Image" width="300" />
+    <p>Airport: {{ destination.airport_name }}</p>
+    <a [href]="destination.airport_url">Visit airport website</a>
+</div>

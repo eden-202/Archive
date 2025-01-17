@@ -1,0 +1,21 @@
+.table-container {
+    padding: 1rem;
+    display: block;
+    max-width: 90% !important;
+}
+.design-table {
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
+.icon {
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+}
+
+th {
+    font-weight: bold;
+    width:max-content;
+}

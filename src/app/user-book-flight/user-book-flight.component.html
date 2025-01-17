@@ -1,0 +1,70 @@
+<div class="table-container">
+    <div style="margin-bottom:.5rem; width:200px; gap:1rem; display: flex; justify-content: space-between; flex-direction:column;">
+        <label>Origin</label>
+        <mat-select [(ngModel)]="filter_origin" style="border:1px solid lightgray; padding:.5rem;" class="form-control" placeholder="Select origin" (valueChange)="filterOrigin($event)">
+            <mat-option *ngFor="let origin of all_destinations" [value]="origin">{{origin.destination_name}}</mat-option>
+        </mat-select>
+        <label>Destination</label>
+        <mat-select [(ngModel)]="filter_destination"  style="border:1px solid lightgray; padding:.5rem;" class="form-control" placeholder="Select destination"  (valueChange)="filterDestination($event)">
+            <mat-option *ngFor="let destination of all_destinations"
+                [value]="destination">{{destination.destination_name}}</mat-option>
+        </mat-select>
+        <button class="btn btn-primary" (click)="showAll()">
+            Clear filters
+        </button>
+    </div>
+    <table mat-table [dataSource]="filtered_flights" class="design-table">
+        <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- PositionColumn -->
+        <ng-container matColumnDef="flight_id">
+            <th mat-header-cell *matHeaderCellDef> Flight No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.flight_id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="origin">
+            <th mat-header-cell *matHeaderCellDef> Origin </th>
+            <td mat-cell *matCellDef="let element"> {{element.origin}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="destination">
+            <th mat-header-cell *matHeaderCellDef> Destination </th>
+            <td mat-cell *matCellDef="let element"> {{element.destination}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="boarding_date">
+            <th mat-header-cell *matHeaderCellDef> Boarding Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.boarding_date}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="boarding_time">
+            <th mat-header-cell *matHeaderCellDef> Boarding Time </th>
+            <td mat-cell *matCellDef="let element"> {{element.boarding_time}} </td>
+        </ng-container>
+        <ng-container matColumnDef="arrival_date">
+            <th mat-header-cell *matHeaderCellDef> Arrival Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.arrival_date}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="arrival_time">
+            <th mat-header-cell *matHeaderCellDef> Arrival Time </th>
+            <td mat-cell *matCellDef="let element"> {{element.arrival_time}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="book">
+            <th mat-header-cell *matHeaderCellDef> Book </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button aria-label="Book flight" class="icon"
+                    [routerLink]="['/user-book-flight-form', element.flight_id]">
+                    <mat-icon class="icon">book</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <br />
+    <button type="submit" class="btn btn-primary" [routerLink]="['/admin-add-flight']">Add Flight</button>
+</div>

@@ -1,0 +1,17 @@
+form {
+    padding: 1rem;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+}
+small {
+    padding-block:.5rem;
+    display: block;
+    color:gray; 
+    font-size: 11px;
+    transform: translateY(-1.5rem);
+}

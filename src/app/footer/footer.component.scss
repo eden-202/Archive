@@ -1,0 +1,33 @@
+.footer {
+    background-color: #3a3b46;
+    border-top: 5px solid #3a3b46;
+    text-align: center;
+    padding-inline: 20px;
+    display: block;
+    height: 51px;
+    box-sizing: border-box;
+}
+
+.help-icon {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.help-icon:hover {
+    background-color: #333333;
+    transform: scale(1.1);
+}

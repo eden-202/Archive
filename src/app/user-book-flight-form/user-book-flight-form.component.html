@@ -1,0 +1,39 @@
+<div *ngIf="flight">
+
+    <form (ngSubmit)="bookFlight()" novalidate>
+        <h2>Book Flight</h2>
+
+        <div class="form-group">
+            <p>Origin:{{ flight.origin }} </p>
+            <p>Destination:{{ flight.destination }} </p>
+            <p>Boarding: {{flight.boarding_date}} - {{flight.boarding_time}} </p>
+            <p>Landing: {{flight.arrival_date}} - {{flight.arrival_time}}</p>
+        </div>
+        <mat-select style="border:1px solid lightgray; padding:1rem; margin-bottom:1rem; width:fit-content; min-width:200px;" (valueChange)="declarePassengers($event)" placeholder="Passenger Count">
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+            <mat-option value="5">5</mat-option>
+        </mat-select>
+
+        <div style="align-items:center; display: flex; flex-direction:row; gap:1rem;" class="form-group"
+            *ngFor="let passenger of passenger_details; let i = index">
+            <p>
+                Passenger {{ i + 1 }}
+            </p>
+            <mat-form-field>
+                <mat-label for="full_name">Full name</mat-label>
+                <input name="full_name" [(ngModel)]="passenger_details[i].full_name" required matInput type="text"
+                    class="form-control" id="full_name" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="passport_number">Passport Number</mat-label>
+                <input name="passport_number" [(ngModel)]="passenger_details[i].passport_number" required matInput
+                    type="text" class="form-control" id="full_name" />
+            </mat-form-field>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>

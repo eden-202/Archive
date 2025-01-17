@@ -1,0 +1,51 @@
+<h1 class="page-title">Manage Destinations</h1>
+<div class="table-container">
+    <table *ngIf="destinations_service.destinationsData | async as destinations" mat-table [dataSource]="destinations"
+        class="design-table">
+        <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="destination_code">
+            <th mat-header-cell *matHeaderCellDef> Destination Code </th>
+            <td mat-cell *matCellDef="let element"> {{element.destination_id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="destination_name">
+            <th mat-header-cell *matHeaderCellDef> Destination Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.destination_name}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="airport_name">
+            <th mat-header-cell *matHeaderCellDef> Airport name </th>
+            <td mat-cell *matCellDef="let element"> {{element.airport_name}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="airport_url">
+            <th mat-header-cell *matHeaderCellDef> Airport url </th>
+            <td mat-cell *matCellDef="let element"> {{element.airport_url}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button aria-label="Edit destination" class="icon"
+                    [routerLink]="['/admin-edit-destination', element.destination_id]">
+                    <mat-icon class="icon">edit</mat-icon>
+                </button>
+                <button mat-icon-button aria-label="Destination Details" class="icon"
+                    [routerLink]="['/destination-details', element.destination_id]">
+                    <mat-icon class="icon">details</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <br />
+    <button type="submit" class="btn btn-primary" [routerLink]="['/admin-add-destination']">Add Destination</button>
+</div>
