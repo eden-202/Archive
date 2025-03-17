@@ -10,7 +10,6 @@ import { provideDateFnsAdapter } from '@angular/material-date-fns-adapter';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(
       routes,
       withRouterConfig({
@@ -19,11 +18,9 @@ export const appConfig: ApplicationConfig = {
     ),
     provideDateFnsAdapter(), // Provide the DateFns adapter
     provideAnimationsAsync(),
-    provideAnimationsAsync(),
-    provideAnimationsAsync(),
-    importProvidersFrom([
+    importProvidersFrom(
       provideFirebaseApp(() => initializeApp(environment.firebase)),
-      provideFirestore(() => getFirestore()),
-    ]),
+      provideFirestore(() => getFirestore())
+    )
   ],
 };

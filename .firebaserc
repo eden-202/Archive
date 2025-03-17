@@ -1,5 +1,7 @@
 {
   "projects": {
     "default": "onoflight-fb99a"
-  }
+  },
+  "targets": {},
+  "etags": {}
 }

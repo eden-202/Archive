@@ -12,7 +12,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './admin-manage-destinations.component.scss',
 })
 export class AdminManageDestinationsComponent  {
-  destinations_service = inject(DestinationsService);
   displayedColumns: string[] = [
     'destination_code',
     'destination_name',
@@ -20,4 +19,5 @@ export class AdminManageDestinationsComponent  {
     'airport_url',
     'actions',
   ];
+  destinations_service = inject(DestinationsService);
 }

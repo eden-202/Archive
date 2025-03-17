@@ -1,0 +1,58 @@
+[debug] [2025-03-09T17:26:57.830Z] ----------------------------------------------------------------------
+[debug] [2025-03-09T17:26:57.852Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2025-03-09T17:26:57.853Z] CLI Version:   13.29.2
+[debug] [2025-03-09T17:26:57.854Z] Platform:      win32
+[debug] [2025-03-09T17:26:57.854Z] Node Version:  v20.15.1
+[debug] [2025-03-09T17:26:57.855Z] Time:          Sun Mar 09 2025 19:26:57 GMT+0200 (שעון ישראל (חורף))
+[debug] [2025-03-09T17:26:57.856Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-03-09T17:26:57.873Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-03-09T17:27:00.156Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-09T17:27:00.156Z] > authorizing via signed-in user (edenyoalashet@gmail.com)
+[info] i  emulators: Starting emulators: hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: hosting"}}
+[debug] [2025-03-09T17:27:00.868Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-03-09T17:27:00.870Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-03-09T17:27:00.875Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-03-09T17:27:00.936Z] [hub] writing locator at C:\Users\User\AppData\Local\Temp\hub-onoflight-fb99a.json
+[debug] [2025-03-09T17:27:01.199Z] Checked if tokens are valid: false, expires at: 1737735119288
+[debug] [2025-03-09T17:27:01.200Z] Checked if tokens are valid: false, expires at: 1737735119288
+[debug] [2025-03-09T17:27:01.201Z] > refreshing access token with scopes: []
+[debug] [2025-03-09T17:27:01.205Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-03-09T17:27:01.207Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-03-09T17:27:01.506Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-03-09T17:27:01.506Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-03-09T17:27:01.535Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-03-09T17:27:01.536Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-03-09T17:27:01.556Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/onoflight-fb99a/sites 
+[debug] [2025-03-09T17:27:02.963Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/onoflight-fb99a/sites 200
+[debug] [2025-03-09T17:27:02.964Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/onoflight-fb99a/sites {"sites":[{"name":"projects/onoflight-fb99a/sites/onoflight-fb99a","defaultUrl":"https://onoflight-fb99a.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2025-03-09T17:27:02.964Z] Checked if tokens are valid: true, expires at: 1741544820536
+[debug] [2025-03-09T17:27:02.964Z] Checked if tokens are valid: true, expires at: 1741544820536
+[debug] [2025-03-09T17:27:02.964Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/onoflight-fb99a/webApps/-/config [none]
+[debug] [2025-03-09T17:27:03.664Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/onoflight-fb99a/webApps/-/config 200
+[debug] [2025-03-09T17:27:03.664Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/onoflight-fb99a/webApps/-/config {"projectId":"onoflight-fb99a","databaseURL":"https://onoflight-fb99a-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"onoflight-fb99a.firebasestorage.app","apiKey":"AIzaSyBVxX4RJQmq7Fv3oeL1Lw1T8LDcBrELrpM","authDomain":"onoflight-fb99a.firebaseapp.com","messagingSenderId":"306963294931"}
+[debug] [2025-03-09T17:27:03.675Z] Checked if tokens are valid: true, expires at: 1741544820536
+[debug] [2025-03-09T17:27:03.677Z] Checked if tokens are valid: true, expires at: 1741544820536
+[debug] [2025-03-09T17:27:03.678Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/onoflight-fb99a [none]
+[debug] [2025-03-09T17:27:05.110Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/onoflight-fb99a 200
+[debug] [2025-03-09T17:27:05.111Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/onoflight-fb99a {"projectId":"onoflight-fb99a","projectNumber":"306963294931","displayName":"onoflight","name":"projects/onoflight-fb99a","resources":{"hostingSite":"onoflight-fb99a","realtimeDatabaseInstance":"onoflight-fb99a-default-rtdb"},"state":"ACTIVE","etag":"1_0a57f9e1-f2ad-4cb2-a554-1ba6e9826d2c"}
+[info] i  hosting[onoflight-fb99a]: Serving hosting files from: dist/ono-air2 {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mdist/ono-air2\u001b[22m"}}
+[info] +  hosting[onoflight-fb99a]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[warn] !  emulators: The Emulator UI is not starting, either because none of the running emulators have a UI component or the Emulator UI cannot determine the Project ID. Pass the --project flag to specify a project. {"metadata":{"emulator":{"name":"hub"},"message":"The Emulator UI is not starting, either because none of the running emulators have a UI component or the Emulator UI cannot determine the Project ID. Pass the --project flag to specify a project."}}
+[debug] [2025-03-09T17:27:06.137Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+└─────────────────────────────────────────────────────────────┘
+
+┌──────────┬────────────────┐
+│ Emulator │ Host:Port      │
+├──────────┼────────────────┤
+│ Hosting  │ 127.0.0.1:5000 │
+└──────────┴────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[info] i  hosting: 127.0.0.1 - - [09/Mar/2025:17:29:46 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [09/Mar/2025:17:29:46 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36\""}}
